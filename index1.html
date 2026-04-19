@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sixtyone Bar.Cafe.Lounge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-surface": "#d7e4ec",
+                        "error": "#ffb4ab",
+                        "on-surface": "#d7e4ec",
+                        "surface-dim": "#09151a",
+                        "primary-fixed-dim": "#f9abff",
+                        "tertiary-fixed-dim": "#bbc8d0",
+                        "on-tertiary": "#263238",
+                        "surface-bright": "#2f3b41",
+                        "on-secondary-container": "#e299ff",
+                        "primary-fixed": "#ffd6fe",
+                        "secondary-fixed": "#f8d8ff",
+                        "on-primary-fixed": "#35003f",
+                        "on-error": "#690005",
+                        "surface-container": "#152127",
+                        "on-secondary-fixed": "#320047",
+                        "error-container": "#93000a",
+                        "on-secondary": "#520071",
+                        "outline-variant": "#514250",
+                        "on-surface-variant": "#d5c1d2",
+                        "surface-container-highest": "#2a363d",
+                        "surface-tint": "#f9abff",
+                        "on-tertiary-fixed": "#111d23",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#3c494f",
+                        "surface-container-high": "#202c32",
+                        "surface": "#09151a",
+                        "on-tertiary-container": "#d0dde5",
+                        "background": "#09151a",
+                        "primary": "#f9abff",
+                        "inverse-primary": "#9a25ae",
+                        "tertiary-fixed": "#d7e4ec",
+                        "on-primary": "#570066",
+                        "surface-container-lowest": "#041015",
+                        "on-primary-container": "#ffcaff",
+                        "secondary-container": "#721199",
+                        "secondary": "#ebb2ff",
+                        "outline": "#9d8b9b",
+                        "secondary-fixed-dim": "#ebb2ff",
+                        "surface-container-low": "#111d23",
+                        "tertiary": "#bbc8d0",
+                        "inverse-on-surface": "#263238",
+                        "surface-variant": "#2a363d",
+                        "on-secondary-fixed-variant": "#721199",
+                        "on-background": "#d7e4ec",
+                        "tertiary-container": "#556269",
+                        "on-primary-fixed-variant": "#7b008f",
+                        "primary-container": "#9c27b0"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(249, 171, 255, 0.3);
+        }
+        .goog-te-banner-frame.skiptranslate,
+        .goog-te-gadget-icon { display: none !important; }
+        body { top: 0px !important; }
+        #google_translate_element { display: none !important; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-[#09151a]/80 backdrop-blur-2xl fixed top-0 w-full z-50 flex justify-between items-center w-full px-8 py-6 max-w-full mx-auto shadow-[0_20px_40px_rgba(4,16,21,0.4)]">
+<a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="flex items-center group cursor-pointer outline-none">
+    <svg class="text-[#f9abff] mr-3 filter drop-shadow-[0_0_8px_rgba(249,171,255,0.5)] transform group-hover:-rotate-12 transition-transform duration-300" fill="none" height="34" viewBox="0 0 24 24" width="34" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 21h8" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+<path d="M12 12v9" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+<path d="M3 5l9 9 9-9" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M3 5h13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+<path d="M16 5 A 3 3 0 0 1 22 5 Z" fill="#9c27b0" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M19 5 v -3" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+<path d="M19 5 l -2 -1.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+<path d="M19 5 l 2 -1.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+<div class="font-newsreader text-3xl font-bold tracking-tighter text-[#f9abff] notranslate" translate="no">Sixtyone</div>
+</a>
+<nav class="hidden md:flex gap-8">
+<a class="text-[#d5c1d2] hover:text-[#f9abff] transition-colors font-body hover:scale-105 hover:shadow-[0_0_15px_rgba(156,39,176,0.5)]" href="#atmosphere">Atmosphere</a>
+<a class="text-[#d5c1d2] hover:text-[#f9abff] transition-colors font-body hover:scale-105 hover:shadow-[0_0_15px_rgba(156,39,176,0.5)]" href="#menu">Menu</a>
+<a class="text-[#d5c1d2] hover:text-[#f9abff] transition-colors font-body hover:scale-105 hover:shadow-[0_0_15px_rgba(156,39,176,0.5)]" href="#services">Services</a>
+<a class="text-[#f9abff] border-b-2 border-[#9c27b0] pb-1 transition-all font-body hover:scale-105 hover:shadow-[0_0_15px_rgba(156,39,176,0.5)]" href="#reserve">Reserve</a>
+<a class="text-[#d5c1d2] hover:text-[#f9abff] transition-colors font-body hover:scale-105 hover:shadow-[0_0_15px_rgba(156,39,176,0.5)]" href="#contact">Contact</a>
+</nav>
+<div class="hidden md:flex items-center gap-6">
+<div class="relative group">
+<button class="flex items-center gap-1.5 text-[#d5c1d2] hover:text-[#f9abff] transition-colors font-body py-2">
+<span class="material-symbols-outlined text-[20px]">language</span>
+<span id="current-lang-text" class="text-sm font-semibold tracking-wide uppercase">DE</span>
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:rotate-180">expand_more</span>
+</button>
+<div class="absolute right-0 mt-2 w-44 bg-surface-container-high border border-outline-variant/20 rounded-md shadow-[0_10px_30px_rgba(4,16,21,0.6)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden text-[#d7e4ec]">
+<div class="py-2 max-h-[400px] overflow-y-auto no-scrollbar style="scrollbar-width: none;">
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('cs', 'CS'); return false;"><img alt="Čeština" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/cz.png"/> Čeština</a>
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('de', 'DE'); return false;"><img alt="Deutsch" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/de.png"/> Deutsch</a>
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('en', 'EN'); return false;"><img alt="English" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/gb.png"/> English</a>
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('es', 'ES'); return false;"><img alt="Español" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/es.png"/> Español</a>
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('fr', 'FR'); return false;"><img alt="Français" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/fr.png"/> Français</a>
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('hr', 'HR'); return false;"><img alt="Hrvatski" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/hr.png"/> Hrvatski</a>
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('it', 'IT'); return false;"><img alt="Italiano" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/it.png"/> Italiano</a>
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('hu', 'HU'); return false;"><img alt="Magyar" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/hu.png"/> Magyar</a>
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('nl', 'NL'); return false;"><img alt="Nederlands" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/nl.png"/> Nederlands</a>
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('pl', 'PL'); return false;"><img alt="Polski" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/pl.png"/> Polski</a>
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('pt', 'PT'); return false;"><img alt="Português" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/pt.png"/> Português</a>
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('ro', 'RO'); return false;"><img alt="Română" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/ro.png"/> Română</a>
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('ru', 'RU'); return false;"><img alt="Русский" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/ru.png"/> Русский</a>
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('sk', 'SK'); return false;"><img alt="Slovensky" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/sk.png"/> Slovensky</a>
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('tr', 'TR'); return false;"><img alt="Türkçe" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/tr.png"/> Türkçe</a>
+<a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('uk', 'UA'); return false;"><img alt="Українська" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/ua.png"/> Українська</a>
+</div>
+</div>
+</div>
+<a class="bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed px-6 py-2 rounded-full font-medium tracking-wide hover:shadow-[0_0_20px_rgba(249,171,255,0.4)] transition-all" href="#reserve">
+            Book Table
+        </a>
+</div>
+</header>
+<main>
+<!-- Hero Section (Sticky) -->
+<section id="hero-container" class="relative h-[250vh] bg-surface">
+<div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0 bg-surface">
+<video id="hero-scroll-video" src="Bar_Scroll_Animation.mp4" class="w-full h-full object-cover opacity-60 filter contrast-110" muted playsinline preload="auto"></video>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-surface/80 to-transparent"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl px-4 mt-20">
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl text-primary font-bold tracking-tighter mb-6 text-glow">
+                    Die Kunst des Genießens
+                </h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant mb-12 tracking-wide font-light">
+                    Bar • Cafe • Lounge in Hamburg
+                </p>
+<a class="inline-flex items-center justify-center bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed px-10 py-4 rounded-full font-label text-lg font-semibold tracking-wider hover:shadow-[0_0_30px_rgba(249,171,255,0.5)] transition-all duration-300 transform hover:-translate-y-1" href="#reserve">
+                    Jetzt Reservieren
+                </a>
+</div>
+</div>
+</section>
+<!-- Atmosphere Section -->
+<section class="py-32 px-8 bg-surface relative" id="atmosphere">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8 order-2 lg:order-1 relative z-10">
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface font-semibold tracking-tight">
+                        Sixtyone Bar.Cafe.Lounge
+                    </h2>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed">
+                        Gemütlich abhängen und mit Kollegen durch die Nacht feiern? Das können Sie bei uns in der „Sixtyone Bar.Cafe.Lounge“ immer wieder erleben. Energiegeladene Musik und ein stimmiges Ambiente bietet Ihnen unsere Bar. Verbringen Sie den Abend in unserem idyllischen Außenbereich. Wenn es dann etwas frischer wird, ist die beheizte Terrasse genau der richtige Rückzugsort für einen besonders atmosphärischen Aufenthalt.
+                    </p>
+<div class="space-y-4 pt-4">
+<h3 class="font-headline text-2xl text-primary">Gut gelegene Bar mit umfassendem Getränkeangebot</h3>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed">
+                        Wir empfehlen Ihnen gerne ein erfrischendes Bier. Für alle Food-Blogger: Fotos machen und direkt auf Instagram teilen – kein Thema. Wir haben kostenloses WLAN. Wir haben einen separaten Bereich für alle Raucher.
+                    </p>
+</div>
+</div>
+<div class="order-1 lg:order-2 relative">
+<div class="absolute -inset-4 bg-surface-container-low rounded-lg transform rotate-2 opacity-50"></div>
+<img alt="Signature Cocktail" class="relative w-full h-[600px] object-cover rounded-sm grayscale-[20%] contrast-125" data-alt="Close up of a masterful cocktail being poured in a crystal glass, dark background, rim lit, moody speakeasy vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMOc0Kj5MhaZR16cg6iBOI3veXqCtIe52ZKL8wemPyD6EDyjX0R7uDX_024UcWYEROatM8nJiN9TKGrfBOPB0NXTEpStIHUJtE33YZAxLObckWAJGMBC1QpxmQOEMA0VESpHiOWcgNky-uJepmYRr3ltLxQQXqEl1WzWYlqgJw0iBKzE7Fhp3E6i5SB4kG1l2zkaaG8Y80eLoWgelGY82arw0jMGE_86uNo6ViKnB9ruB7YOBI4VDziekvFmaBW7Ue0T1pcPvUvUQ"/>
+</div>
+</div>
+</section>
+<!-- Highlights (Bento Grid) -->
+<section class="py-32 px-8 bg-surface-container-low" id="menu">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-headline text-4xl text-on-surface mb-16 text-center font-medium">Signature Signatures</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Item 1 -->
+<div class="col-span-1 md:col-span-2 relative h-[400px] group overflow-hidden bg-surface rounded-sm">
+<img alt="Smoked Old Fashioned" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-700 mix-blend-luminosity group-hover:mix-blend-normal" data-alt="Artisan smoking cocktail with orange peel garnish on a dark textured table, moody lighting, luxury presentation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAurWC674Q0IINTch5_TnNIkHdE_b7pcy_1YPx1t146l5Q54l1bSOrCEtFf07eZQGqDcTm0E9ev5RiSwFw4Dwn2fUwU6zEKS3Q36CirdwP3UNMhK-j6ZSifbsVTBLrGzn4ybIm9NGp1RpXMqEpRLqbAPTDqmyfw-pxJV_xWli1Wqewmmtj_5khjkF4UxaxUVAWHu3GTvDNoVigqteNvU5gopxpF0n3a05ru2ckwY34ls7UNQm--FFA0yR50Hf9BShFIHPYi98bSxr8"/>
+<div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-surface to-transparent">
+<h3 class="font-headline text-2xl text-primary mb-2">Smoked Old Fashioned</h3>
+<p class="font-body text-on-surface-variant text-sm">Bourbon, Angostura, Orange, Eichenrauch</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="col-span-1 relative h-[400px] group overflow-hidden bg-surface rounded-sm">
+<img alt="Velvet Martini" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-700 mix-blend-luminosity group-hover:mix-blend-normal" data-alt="Elegant martini glass with clear cocktail and olive garnish, dark background, sharp rim lighting, sophisticated aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY0Vu_0-Sm-r1BBakn7AMCcmBht4B42EIfxaLMRAiudqxcI3S13Z_DRUpF8nHm74GnUX9Xysq5qtc1Qtc01Wk2CeQDAP9h2xL6hyeefQ8xsaz3OiNzrVBdjj7aw4KWPFeeFk61o-k66yRJ5LHhOUwSc-omtOVrmEN-yU5kcDa9ShaatM9kbZU1THn-d9e2BRpxj3dPoom0Fapagt70fcKHnFQ3DHtON0NIlYrr3dRWP25daPYOPnWA6kLTortaBWKjIA-M0c9PCpM"/>
+<div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-surface to-transparent">
+<h3 class="font-headline text-2xl text-primary mb-2">Velvet Martini</h3>
+<p class="font-body text-on-surface-variant text-sm">Gin, Wermut, Lavendel, Zitrone</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="col-span-1 relative h-[400px] group overflow-hidden bg-surface rounded-sm">
+<img alt="Artisan Platter" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-700 mix-blend-luminosity group-hover:mix-blend-normal" data-alt="Gourmet charcuterie board with artisanal cheeses, cured meats, and dark grapes on a slate plate, low key lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfR6D9CjyWaNO45Hm1WhPU5TI_cpRmElP-GlWsQDDXD5GshBYi8vnue3tivhayCDoi_lRY---58_2dnhxFobFPcKz19MbErVJJjyT-WM558zEuuggTNIDE2I2CudAcI3y0AL6e403Ma0CrCgpBa7jjQNVGdbMZIKGQ9qPGpR9N5E8pdg5z5EISEz3xk7EBu_FuwJ39xXHHsHEF-3oRjbFh6zdG-vgud7MoslJul3h3aEgixpOiKoBlWAkhqmyOk7WadVqnfJW08Ms"/>
+<div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-surface to-transparent">
+<h3 class="font-headline text-2xl text-primary mb-2">Artisan Platter</h3>
+<p class="font-body text-on-surface-variant text-sm">Auswahl an feinem Käse und Schinken</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="col-span-1 md:col-span-2 relative h-[400px] group overflow-hidden bg-surface rounded-sm">
+<img alt="Sixtyone Special" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-700 mix-blend-luminosity group-hover:mix-blend-normal" data-alt="Vibrant purple signature cocktail with crushed ice and mint in a stylish tumbler, dark moody setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0ysms5OlNWn0dv3-ZCYI02ghqTQL4iHTWf3cUQJPDOYYR9szCgEDhZLotMUqzzOaDa2c2KLRBZ7dRu1RdssT93pvLn78BaapRo_Q8wJcUqWYp2wUA9HgM1wjSgVaQ3rAiJQVqTLgJTKRzecuqomSEnuj_4qcYtXDqGaSP7Em4yWyzLMYyR7eo2AUf3ZmoBRv_HwNZQRahE5Sjtrbo-9_1dOitqflAxHQTWY-_qyq0u5nvMbka-VSr1Zfcl-alRzvHUhrvNdAUZhA"/>
+<div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-surface to-transparent">
+<h3 class="font-headline text-2xl text-primary mb-2">Sixtyone Special</h3>
+<p class="font-body text-on-surface-variant text-sm">Wodka, Brombeere, Rosmarin, Limette</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-32 px-8 bg-surface" id="services">
+<div class="max-w-7xl mx-auto">
+<div class="max-w-3xl mx-auto text-center mb-16 space-y-6">
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface font-semibold tracking-tight">
+                        Wir organisieren Ihre Hochzeit
+                    </h2>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed">
+                        Stellen Sie Ihr Fahrzeug ganz bequem auf unserem kostenlosen Parkplatz ab. Unsere Bar erreichen Sie barrierefrei. Wir haben ein Herz für Tiere: Auch Haustiere sind gerngesehene Gäste. Reservieren Sie doch einen Tisch bei uns. Wir heißen Sie gerne in unseren stilvollen Räumlichkeiten willkommen. Sie können bei uns ganz einfach über die Online-Reservierung einen Tisch buchen.
+                    </p>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed">
+                        Gerne können Sie Ihre Privatveranstaltung in unserer Bar abhalten. Fragen Sie einfach an! Wenn Sie mögen, können Sie bei uns auch Ihre Hochzeit feiern. Wir sind auf Großveranstaltungen spezialisiert und tun alles, damit Ihr großer Tag für Sie unglaublich schön wird. Wir haben jeden Tag für Sie geöffnet.
+                    </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+<div class="flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-tertiary font-light">accessible</span>
+<p class="font-body text-sm text-on-surface-variant uppercase tracking-widest">Barrierefrei</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-tertiary font-light">ac_unit</span>
+<p class="font-body text-sm text-on-surface-variant uppercase tracking-widest">BEHEIZTE TERRASSE</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-tertiary font-light">wifi</span>
+<p class="font-body text-sm text-on-surface-variant uppercase tracking-widest">WLAN (Gratis)</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-tertiary font-light">deck</span>
+<p class="font-body text-sm text-on-surface-variant uppercase tracking-widest">Außenbereich</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-tertiary font-light">pets</span>
+<p class="font-body text-sm text-on-surface-variant uppercase tracking-widest">Hunde erlaubt</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-tertiary font-light">celebration</span>
+<p class="font-body text-sm text-on-surface-variant uppercase tracking-widest">Privat-Events</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-tertiary font-light">smoking_rooms</span>
+<p class="font-body text-sm text-on-surface-variant uppercase tracking-widest">Raucherbereich</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-tertiary font-light">local_parking</span>
+<p class="font-body text-sm text-on-surface-variant uppercase tracking-widest">Parkplätze</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Reservation Section -->
+<section class="py-32 px-8 bg-surface relative overflow-hidden" id="reserve">
+<!-- Decorative background blur -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="max-w-4xl mx-auto relative z-10 bg-surface-container-high/80 backdrop-blur-2xl p-12 md:p-16 rounded-sm shadow-[0_40px_80px_rgba(4,16,21,0.5)] border border-outline-variant/10">
+<h2 class="font-headline text-4xl md:text-5xl text-primary mb-12 text-center font-medium">Tätigen Sie Ihre Reservierung</h2>
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative">
+<label class="block font-label text-sm text-on-surface-variant mb-2">Datum</label>
+<input class="w-full bg-surface-container-highest border-none rounded-none text-on-surface px-4 py-3 focus:ring-0 focus:border-b-2 focus:border-primary transition-all font-body" type="date"/>
+</div>
+<div class="relative">
+<label class="block font-label text-sm text-on-surface-variant mb-2">Uhrzeit</label>
+<input class="w-full bg-surface-container-highest border-none rounded-none text-on-surface px-4 py-3 focus:ring-0 focus:border-b-2 focus:border-primary transition-all font-body" type="time"/>
+</div>
+</div>
+<div class="relative">
+<label class="block font-label text-sm text-on-surface-variant mb-2">Anzahl der Gäste</label>
+<select class="w-full bg-surface-container-highest border-none rounded-none text-on-surface px-4 py-3 focus:ring-0 focus:border-b-2 focus:border-primary transition-all font-body appearance-none">
+<option>1 Person</option>
+<option>2 Personen</option>
+<option>3 Personen</option>
+<option>4 Personen</option>
+<option>5+ Personen</option>
+</select>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative">
+<label class="block font-label text-sm text-on-surface-variant mb-2">Name</label>
+<input class="w-full bg-surface-container-highest border-none rounded-none text-on-surface px-4 py-3 focus:ring-0 focus:border-b-2 focus:border-primary transition-all font-body placeholder:text-outline" placeholder="Ihr voller Name" type="text"/>
+</div>
+<div class="relative">
+<label class="block font-label text-sm text-on-surface-variant mb-2">Telefon</label>
+<input class="w-full bg-surface-container-highest border-none rounded-none text-on-surface px-4 py-3 focus:ring-0 focus:border-b-2 focus:border-primary transition-all font-body placeholder:text-outline" placeholder="+49 ..." type="tel"/>
+</div>
+</div>
+<div class="relative">
+<label class="block font-label text-sm text-on-surface-variant mb-2">Email</label>
+<input class="w-full bg-surface-container-highest border-none rounded-none text-on-surface px-4 py-3 focus:ring-0 focus:border-b-2 focus:border-primary transition-all font-body placeholder:text-outline" placeholder="mail@example.com" type="email"/>
+</div>
+<div class="pt-8">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed py-4 rounded-full font-label text-lg font-semibold tracking-wider hover:shadow-[0_0_30px_rgba(249,171,255,0.4)] transition-all" type="button">
+                            Reservierung Anfragen
+                        </button>
+</div>
+</form>
+</div>
+</section>
+<!-- Hours & Contact Section -->
+<section class="py-32 px-8 bg-surface-container-low" id="contact">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+<!-- Info -->
+<div class="space-y-16">
+<div>
+<h3 class="font-headline text-3xl text-primary mb-6">Opening Hours</h3>
+<ul class="space-y-4 font-body text-on-surface-variant">
+<li class="flex justify-between border-b border-outline-variant/20 pb-2">
+<span>Montag - Donnerstag</span>
+<span>17:00 - 01:00</span>
+</li>
+<li class="flex justify-between border-b border-outline-variant/20 pb-2">
+<span>Freitag - Samstag</span>
+<span>17:00 - 03:00</span>
+</li>
+<li class="flex justify-between border-b border-outline-variant/20 pb-2">
+<span>Sonntag</span>
+<span>15:00 - 23:00</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="font-headline text-3xl text-primary mb-6">Location</h3>
+<div class="font-body text-on-surface-variant space-y-4">
+<p class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary">location_on</span>
+                                Ahrensburger Str. 111b<br/>22045 Hamburg
+                            </p>
+<p class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary">phone</span>
+                                +49 40 1234567
+                            </p>
+</div>
+</div>
+</div>
+<!-- Map Visual Placeholder -->
+<div class="h-full min-h-[400px] bg-surface-container-highest relative rounded-sm overflow-hidden">
+<img alt="Map Location" class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-screen" data-alt="Abstract dark minimalist map visual showing glowing street lines in deep navy and purple hues" data-location="Hamburg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUjOO8cyscGUhFCLfzWxnVeoe8sS9REA3zmv0oJIRtRPwyFSSyp5zLoAxDsT-4xtYPIdFrE-RuZnWwZovIGOi2u01NmDammGLVQxLOkuXni9-FvIa-eJufgGgcVLxwnFPL_PGBXVzUuc9aKCW9L_Z_i_g5MqzCdlRuAzSNaPAkAvhBOUf1LwyqCURbO5twRIfz2n7p-FI_6yr1XI6a43kmF5oiRKLL8ncl-OLtf-qfLxuwifKzPUbZvw6kJoXEfwV9Ai3NwgE2obY"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-surface via-transparent to-transparent"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#09151a] w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto border-t border-white/5 pt-12">
+<a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="flex items-center group cursor-pointer outline-none">
+    <svg class="text-[#f9abff] mr-2 filter drop-shadow-[0_0_5px_rgba(249,171,255,0.4)] transform group-hover:-rotate-12 transition-transform duration-300" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 21h8" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+<path d="M12 12v9" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+<path d="M3 5l9 9 9-9" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M3 5h13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+<path d="M16 5 A 3 3 0 0 1 22 5 Z" fill="#9c27b0" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M19 5 v -3" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+<path d="M19 5 l -2 -1.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+<path d="M19 5 l 2 -1.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+<div class="font-newsreader text-xl text-[#f9abff] notranslate" translate="no">Sixtyone</div>
+</a>
+<div class="flex gap-6 font-manrope text-sm uppercase tracking-widest text-[#d5c1d2]">
+<a class="hover:text-[#f9abff] underline decoration-[#9c27b0] underline-offset-4 transition-all" href="#">Impressum</a>
+<a class="hover:text-[#f9abff] underline decoration-[#9c27b0] underline-offset-4 transition-all" href="#">Datenschutz</a>
+<a class="hover:text-[#f9abff] underline decoration-[#9c27b0] underline-offset-4 transition-all" href="#">Kontakt</a>
+</div>
+<div class="font-manrope text-sm uppercase tracking-widest text-[#f9abff]">
+            © 2024 Sixtyone Bar.Cafe.Lounge. All rights reserved.
+        </div>
+</footer>
+
+<!-- Google Translate & Custom Translation Logic -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'de', autoDisplay: false}, 'google_translate_element');
+    }
+    
+    function setLanguage(langCode, displayCode) {
+        localStorage.setItem("user-lang-display", displayCode);
+        localStorage.setItem("user-lang-code", langCode);
+        
+        var el = document.getElementById("current-lang-text");
+        if(el) el.innerText = displayCode;
+        
+        var selectField = document.querySelector(".goog-te-combo");
+        if (selectField) {
+            selectField.value = langCode;
+            selectField.dispatchEvent(new Event('change'));
+        }
+    }
+
+    function applySavedLanguage() {
+        var langCode = localStorage.getItem("user-lang-code");
+        if (!langCode || langCode === 'de') return;
+        
+        var selectField = document.querySelector(".goog-te-combo");
+        if (selectField) {
+            selectField.value = langCode;
+            selectField.dispatchEvent(new Event('change'));
+        } else {
+            setTimeout(applySavedLanguage, 250);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var displayLabel = localStorage.getItem("user-lang-display") || "DE";
+        var el = document.getElementById("current-lang-text");
+        if(el) el.innerText = displayLabel;
+        
+        setTimeout(applySavedLanguage, 500);
+    });
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="fixed bottom-0 md:bottom-8 left-0 md:left-8 right-0 md:right-auto md:w-[420px] z-[100] bg-surface-container-highest/95 backdrop-blur-2xl border-t md:border border-outline-variant/30 p-8 md:rounded-2xl shadow-[0_-10px_40px_rgba(4,16,21,0.8)] md:shadow-[0_20px_40px_rgba(4,16,21,0.8)] transform transition-all duration-700 translate-y-full opacity-0" style="display: none;">
+    <div class="flex items-start gap-5">
+        <div class="p-3 bg-surface rounded-full shadow-inner shrink-0">
+            <span class="material-symbols-outlined text-primary text-2xl">cookie</span>
+        </div>
+        <div class="space-y-4 flex-1">
+            <h3 class="font-headline text-3xl text-on-surface">Privatsphäre</h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed font-light">
+                Um deinen digitalen Besuch in der Sixtyone Bar.Cafe.Lounge genauso perfekt zu machen wie einen Abend bei uns vor Ort, verwenden wir Cookies (z.B. für die Funktion der Spracheinstellungen).
+            </p>
+            <div class="pt-3">
+                <button onclick="acceptCookies()" class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed px-6 py-3.5 rounded-full font-label text-base font-semibold tracking-wider hover:shadow-[0_0_25px_rgba(249,171,255,0.4)] transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1">
+                    <span class="material-symbols-outlined text-[22px]">local_bar</span> 
+                    Cheers! (Akzeptieren)
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (!localStorage.getItem("cookies-accepted")) {
+            const banner = document.getElementById("cookie-banner");
+            banner.style.display = "block";
+            // trigger animation
+            setTimeout(() => {
+                banner.classList.remove("translate-y-full", "opacity-0");
+            }, 100);
+        }
+    });
+
+    function acceptCookies() {
+        localStorage.setItem("cookies-accepted", "true");
+        const banner = document.getElementById("cookie-banner");
+        banner.classList.add("translate-y-10", "opacity-0");
+        setTimeout(() => {
+            banner.style.display = "none";
+        }, 700);
+    }
+</script>
+<script type="text/javascript">
+    // Hero Video Scrubbing Logic (Sticky)
+    document.addEventListener("DOMContentLoaded", function() {
+        const video = document.getElementById("hero-scroll-video");
+        const container = document.getElementById("hero-container");
+        if (!video || !container) return;
+        video.pause();
+        const updateVideoProgress = () => {
+            if (video.duration) {
+                const rect = container.getBoundingClientRect();
+                const maxScroll = rect.height - window.innerHeight;
+                let scrolled = -rect.top;
+                let progress = scrolled / maxScroll;
+                if (progress < 0) progress = 0;
+                if (progress > 1) progress = 1;
+                video.currentTime = video.duration * progress;
+            }
+            requestAnimationFrame(updateVideoProgress);
+        };
+        requestAnimationFrame(updateVideoProgress);
+    });
+</script>
+</body></html>
