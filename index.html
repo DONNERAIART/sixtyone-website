@@ -104,7 +104,17 @@
         .animate-brand-text { animation: textPulse 3s ease-in-out infinite; }
         
         #hero-loader {
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        main, #main-header {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        body.loaded main, body.loaded #main-header {
+            opacity: 1;
+        }
+        body:not(.loaded) {
+            overflow: hidden;
         }
         
         #mobile-menu-btn.active #bar1 {
@@ -693,14 +703,11 @@
     }
 
     async function extractAll() {
-        // Safety timeout to hide loader if metadata never loads
+        // Safety timeout to hide loader if metadata never loads (extended for 50% requirement)
         const safetyTimeout = setTimeout(() => {
             console.log("Video metadata timeout - revealing page anyway.");
-            if (loader && loader.style.opacity !== "0") {
-                loader.style.opacity = "0";
-                setTimeout(() => { if(loader.parentNode) loader.remove(); }, 1000);
-            }
-        }, 4000);
+            revealSite();
+        }, 8000);
 
         if (video.readyState < 1) {
             await new Promise(r => {
@@ -741,15 +748,22 @@
             const pct = Math.round(((i + 1) / total) * 100);
             if (loaderText) loaderText.textContent = "Laden... " + pct + "%";
 
-            // Early Reveal: Show the page once 25% or 30 frames are ready
-            if ((pct >= 25 || i > 30) && loader && loader.style.opacity !== "0") {
-                loader.style.opacity = "0";
-                setTimeout(() => { if(loader.parentNode) loader.remove(); }, 1000);
+            // Early Reveal: Show the page once 50% or 60 frames are ready
+            if ((pct >= 50 || i > 60) && loader && loader.style.opacity !== "0") {
+                revealSite();
             }
         }
 
         ready = true;
         currentFloat = getTargetFloat();
+    }
+
+    function revealSite() {
+        if (loader && loader.style.opacity !== "0") {
+            loader.style.opacity = "0";
+            document.body.classList.add("loaded");
+            setTimeout(() => { if(loader.parentNode) loader.remove(); }, 1200);
+        }
     }
 
     // Start animation loop immediately (draws once ready)
