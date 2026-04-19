@@ -91,11 +91,20 @@
         body { top: 0px !important; }
         #google_translate_element { display: none !important; }
         
-        /* Mobile Menu Transitions */
-        #mobile-menu.active {
-            opacity: 1;
-            pointer-events: auto;
-            transform: scale(1);
+        /* Premium Loading Screen Animations */
+        @keyframes martiniPulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(249, 171, 255, 0.4)); }
+            50% { transform: scale(1.05); filter: drop-shadow(0 0 25px rgba(249, 171, 255, 0.6)); }
+        }
+        @keyframes textPulse {
+            0%, 100% { opacity: 0.8; text-shadow: 0 0 10px rgba(249, 171, 255, 0.2); }
+            50% { opacity: 1; text-shadow: 0 0 25px rgba(249, 171, 255, 0.5); }
+        }
+        .animate-martini { animation: martiniPulse 2.5s ease-in-out infinite; }
+        .animate-brand-text { animation: textPulse 3s ease-in-out infinite; }
+        
+        #hero-loader {
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         #mobile-menu-btn.active #bar1 {
@@ -229,9 +238,34 @@
 <div class="absolute left-0 right-0 bottom-0 top-[90px] z-0 bg-surface">
 <video id="hero-scroll-video" src="Bar_Scroll_Animation.mp4" class="hidden" muted playsinline preload="auto" crossorigin="anonymous"></video>
 <canvas id="hero-canvas" class="absolute inset-0 w-full h-full" style="opacity:0.5;"></canvas>
-<div id="hero-loader" class="absolute inset-0 flex flex-col items-center justify-center bg-surface z-10 transition-opacity duration-500">
-    <span class="material-symbols-outlined text-primary text-5xl animate-pulse mb-4">local_bar</span>
-    <p id="hero-loader-text" class="text-on-surface-variant font-body text-sm tracking-widest uppercase animate-pulse">Laden... 0%</p>
+
+<!-- Premium Full-Screen Loader -->
+<div id="hero-loader" class="fixed inset-0 flex flex-col items-center justify-center bg-[#09151a] z-[10000]">
+    <div class="relative flex flex-col items-center gap-12">
+        <!-- Wordmark -->
+        <div class="font-headline text-5xl md:text-7xl text-primary animate-brand-text tracking-tighter notranslate" translate="no">
+            Sixtyone
+        </div>
+        
+        <!-- Brand Mark (Pink Martini Glass) -->
+        <div class="animate-martini">
+            <svg class="text-[#f9abff] w-24 h-24 md:w-32 md:h-32" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 21h8" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
+                <path d="M12 12v9" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
+                <path d="M3 5l9 9 9-9" stroke="currentColor" stroke-linejoin="round" stroke-width="1.2"></path>
+                <path d="M3 5h13" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
+                <path d="M16 5 A 3 3 0 0 1 22 5 Z" fill="#9c27b0" stroke="currentColor" stroke-linejoin="round" stroke-width="1.2"></path>
+                <path d="M19 5 v -3" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
+                <path d="M19 5 l -2 -1.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
+                <path d="M19 5 l 2 -1.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
+            </svg>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div id="hero-loader-text" class="text-[#d5c1d2] font-label tracking-[0.3em] text-xs md:text-sm uppercase opacity-60">
+            Laden... 0%
+        </div>
+    </div>
 </div>
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-transparent"></div>
 <div class="absolute inset-0 bg-gradient-to-b from-surface/40 to-transparent"></div>
