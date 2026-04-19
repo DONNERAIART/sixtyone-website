@@ -227,7 +227,7 @@
 <section id="hero-container" class="relative h-[400vh] bg-surface">
 <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
 <div class="absolute left-0 right-0 bottom-0 top-[90px] z-0 bg-surface">
-<video id="hero-scroll-video" src="Bar_Scroll_Animation.mp4" class="hidden" muted playsinline preload="auto" crossorigin="anonymous"></video>
+<video id="hero-scroll-video" src="Bar_Scroll_Smooth.mp4" class="hidden" muted playsinline preload="auto" crossorigin="anonymous"></video>
 <canvas id="hero-canvas" class="absolute inset-0 w-full h-full" style="opacity:0.5;"></canvas>
 <div id="hero-loader" class="absolute inset-0 flex flex-col items-center justify-center bg-surface z-10 transition-opacity duration-500">
     <span class="material-symbols-outlined text-primary text-5xl animate-pulse mb-4">local_bar</span>
@@ -613,12 +613,13 @@
     canvas.style.transform  = "translateZ(0)";
 
     const ctx = canvas.getContext("2d", { alpha: false });
-    const FPS = 30;
+    const FPS = 18; // Optimized from 30 to 18 for 40% faster loading with minimal smoothness loss
     let frames = [];
     let ready  = false;
     let currentFloat = 0; // smooth float index for interpolation
 
     function getTargetFloat() {
+        if (!frames.length) return 0;
         const r = section.getBoundingClientRect();
         const max = r.height - window.innerHeight;
         const p = max > 0 ? Math.max(0, Math.min(1, -r.top / max)) : 0;
@@ -646,7 +647,7 @@
 
     // Continuous animation loop with LERP smoothing
     function animate() {
-        if (ready) {
+        if (ready || frames.length > 5) { // Allow drawing as soon as we have a few frames
             const target = getTargetFloat();
             // Smooth LERP — glide towards target
             currentFloat += (target - currentFloat) * 0.15;
@@ -678,7 +679,7 @@
         for (let i = 0; i < total; i++) {
             video.currentTime = (i / (total - 1)) * dur;
             await new Promise(r => {
-                const bail = setTimeout(r, 1000);
+                const bail = setTimeout(r, 800); // Shorter timeout for faster seeking
                 video.addEventListener("seeked", () => {
                     clearTimeout(bail);
                     requestAnimationFrame(r);
@@ -689,15 +690,16 @@
 
             const pct = Math.round(((i + 1) / total) * 100);
             if (loaderText) loaderText.textContent = "Laden... " + pct + "%";
+
+            // Early Reveal: Show the page once 25% or 30 frames are ready
+            if ((pct >= 25 || i > 30) && loader && loader.style.opacity !== "0") {
+                loader.style.opacity = "0";
+                setTimeout(() => { if(loader.parentNode) loader.remove(); }, 1000);
+            }
         }
 
         ready = true;
         currentFloat = getTargetFloat();
-
-        if (loader) {
-            loader.style.opacity = "0";
-            setTimeout(() => loader.remove(), 500);
-        }
     }
 
     // Start animation loop immediately (draws once ready)
