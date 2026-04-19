@@ -147,17 +147,10 @@
             overflow: hidden;
         }
         
-        #mobile-menu-btn.active #bar1 {
-            transform: translateY(8px) rotate(45deg);
-        }
-        
-        #mobile-menu-btn.active #bar2 {
-            opacity: 0;
-            transform: translateX(10px);
-        }
-        
-        #mobile-menu-btn.active #bar3 {
-            transform: translateY(-8px) rotate(-45deg);
+        #mobile-menu.active {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            transform: scale(1) !important;
         }
     </style>
 </head>
