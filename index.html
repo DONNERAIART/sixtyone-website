@@ -170,12 +170,28 @@
             Book Table
         </a>
 
-<!-- Mobile Menu Button -->
-<button class="md:hidden relative z-[60] flex flex-col justify-center items-center w-10 h-10 text-[#f9abff] transition-all duration-300" id="mobile-menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
-    <span class="w-6 h-1 bg-current mb-1 transition-all duration-300 origin-center" id="bar1"></span>
-    <span class="w-6 h-1 bg-current mb-1 transition-all duration-300" id="bar2"></span>
-    <span class="w-6 h-1 bg-current transition-all duration-300 origin-center" id="bar3"></span>
-</button>
+<div class="flex items-center gap-4 md:hidden relative z-[60]">
+    <!-- Mobile Language Toggle -->
+    <button class="flex items-center gap-1 text-[#d5c1d2] hover:text-[#f9abff] transition-colors font-body py-2" onclick="toggleMobileLangMenu()">
+        <span class="material-symbols-outlined text-[20px]">language</span>
+        <span id="mobile-lang-text" class="text-sm font-semibold tracking-wide uppercase">DE</span>
+    </button>
+
+    <!-- Mobile Menu Button -->
+    <button class="flex flex-col justify-center items-center w-10 h-10 text-[#f9abff] transition-all duration-300" id="mobile-menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
+        <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+    </button>
+</div>
+
+<!-- Mobile Language Dropdown (Compact) -->
+<div id="mobile-lang-dropdown" class="fixed top-20 right-4 w-40 bg-surface-container-high border border-outline-variant/20 rounded-md shadow-2xl opacity-0 invisible transition-all duration-300 z-[65] overflow-hidden">
+    <div class="py-2 max-h-[300px] overflow-y-auto no-scrollbar" style="scrollbar-width: none;">
+        <a class="flex items-center gap-3 px-4 py-3 hover:bg-surface-variant text-sm font-body text-[#d7e4ec]" href="#" onclick="setLanguage('de', 'DE'); toggleMobileLangMenu(); return false;">DE - Deutsch</a>
+        <a class="flex items-center gap-3 px-4 py-3 hover:bg-surface-variant text-sm font-body text-[#d7e4ec]" href="#" onclick="setLanguage('en', 'EN'); toggleMobileLangMenu(); return false;">EN - English</a>
+        <a class="flex items-center gap-3 px-4 py-3 hover:bg-surface-variant text-sm font-body text-[#d7e4ec]" href="#" onclick="setLanguage('es', 'ES'); toggleMobileLangMenu(); return false;">ES - Español</a>
+        <a class="flex items-center gap-3 px-4 py-3 hover:bg-surface-variant text-sm font-body text-[#d7e4ec]" href="#" onclick="setLanguage('fr', 'FR'); toggleMobileLangMenu(); return false;">FR - Français</a>
+    </div>
+</div>
 
 <!-- Mobile Overlay Menu -->
 <div id="mobile-menu" class="fixed inset-0 bg-[#09151a] z-[55] flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-500 scale-95 backdrop-blur-3xl">
@@ -475,10 +491,13 @@
         localStorage.setItem("user-lang-display", displayCode);
         localStorage.setItem("user-lang-code", langCode);
         
-        var el = document.getElementById("current-lang-text");
+        const el = document.getElementById("current-lang-text");
         if(el) el.innerText = displayCode;
         
-        var selectField = document.querySelector(".goog-te-combo");
+        const mobileEl = document.getElementById("mobile-lang-text");
+        if(mobileEl) mobileEl.innerText = displayCode.slice(0, 2);
+        
+        const selectField = document.querySelector(".goog-te-combo");
         if (selectField) {
             selectField.value = langCode;
             selectField.dispatchEvent(new Event('change'));
@@ -510,6 +529,7 @@
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         const header = document.getElementById('main-header');
+        const icon = document.getElementById('menu-icon');
         
         btn.classList.toggle('active');
         menu.classList.toggle('active');
@@ -518,11 +538,20 @@
             document.body.style.overflow = 'hidden';
             header.classList.remove('backdrop-blur-2xl');
             header.classList.add('bg-[#09151a]');
+            icon.innerText = 'close';
         } else {
             document.body.style.overflow = '';
             header.classList.add('backdrop-blur-2xl');
             header.classList.remove('bg-[#09151a]');
+            icon.innerText = 'menu';
         }
+    }
+
+    function toggleMobileLangMenu() {
+        const dropdown = document.getElementById('mobile-lang-dropdown');
+        dropdown.classList.toggle('opacity-0');
+        dropdown.classList.toggle('invisible');
+        dropdown.classList.toggle('translate-y-2');
     }
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
