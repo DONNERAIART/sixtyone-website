@@ -132,6 +132,35 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- Premium Top-Level Full-Screen Loader -->
+<div id="hero-loader" class="fixed inset-0 flex flex-col items-center justify-center bg-[#09151a] z-[999999]">
+    <div class="relative flex flex-col items-center gap-12">
+        <!-- Wordmark -->
+        <div class="font-headline text-5xl md:text-7xl text-primary animate-brand-text tracking-tighter notranslate" translate="no">
+            Sixtyone
+        </div>
+        
+        <!-- Brand Mark (Pink Martini Glass) -->
+        <div class="animate-martini">
+            <svg class="text-[#f9abff] w-24 h-24 md:w-32 md:h-32" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 21h8" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
+                <path d="M12 12v9" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
+                <path d="M3 5l9 9 9-9" stroke="currentColor" stroke-linejoin="round" stroke-width="1.2"></path>
+                <path d="M3 5h13" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
+                <path d="M16 5 A 3 3 0 0 1 22 5 Z" fill="#9c27b0" stroke="currentColor" stroke-linejoin="round" stroke-width="1.2"></path>
+                <path d="M19 5 v -3" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
+                <path d="M19 5 l -2 -1.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
+                <path d="M19 5 l 2 -1.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
+            </svg>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div id="hero-loader-text" class="text-[#d5c1d2] font-label tracking-[0.3em] text-xs md:text-sm uppercase opacity-60">
+            Laden... 0%
+        </div>
+    </div>
+</div>
 <!-- TopNavBar -->
 <header class="bg-[#09151a]/80 backdrop-blur-2xl fixed top-0 w-full z-50 flex justify-between items-center px-4 py-4 md:py-6 shadow-[0_20px_40px_rgba(4,16,21,0.4)] transition-all duration-300" id="main-header">
 <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="flex items-center group cursor-pointer outline-none relative z-[60]">
@@ -249,34 +278,6 @@
 <video id="hero-scroll-video" src="Bar_Scroll_Animation.mp4" class="hidden" muted playsinline preload="auto" crossorigin="anonymous"></video>
 <canvas id="hero-canvas" class="absolute inset-0 w-full h-full" style="opacity:0.5;"></canvas>
 
-<!-- Premium Full-Screen Loader -->
-<div id="hero-loader" class="fixed inset-0 flex flex-col items-center justify-center bg-[#09151a] z-[10000]">
-    <div class="relative flex flex-col items-center gap-12">
-        <!-- Wordmark -->
-        <div class="font-headline text-5xl md:text-7xl text-primary animate-brand-text tracking-tighter notranslate" translate="no">
-            Sixtyone
-        </div>
-        
-        <!-- Brand Mark (Pink Martini Glass) -->
-        <div class="animate-martini">
-            <svg class="text-[#f9abff] w-24 h-24 md:w-32 md:h-32" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 21h8" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
-                <path d="M12 12v9" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
-                <path d="M3 5l9 9 9-9" stroke="currentColor" stroke-linejoin="round" stroke-width="1.2"></path>
-                <path d="M3 5h13" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
-                <path d="M16 5 A 3 3 0 0 1 22 5 Z" fill="#9c27b0" stroke="currentColor" stroke-linejoin="round" stroke-width="1.2"></path>
-                <path d="M19 5 v -3" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
-                <path d="M19 5 l -2 -1.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
-                <path d="M19 5 l 2 -1.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path>
-            </svg>
-        </div>
-
-        <!-- Progress Indicator -->
-        <div id="hero-loader-text" class="text-[#d5c1d2] font-label tracking-[0.3em] text-xs md:text-sm uppercase opacity-60">
-            Laden... 0%
-        </div>
-    </div>
-</div>
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-transparent"></div>
 <div class="absolute inset-0 bg-gradient-to-b from-surface/40 to-transparent"></div>
 </div>
@@ -707,7 +708,7 @@
         const safetyTimeout = setTimeout(() => {
             console.log("Video metadata timeout - revealing page anyway.");
             revealSite();
-        }, 8000);
+        }, 12000);
 
         if (video.readyState < 1) {
             await new Promise(r => {
