@@ -86,8 +86,11 @@
             text-shadow: 0 0 20px rgba(249, 171, 255, 0.3);
         }
         .goog-te-banner-frame.skiptranslate,
-        .goog-te-gadget-icon { display: none !important; }
-        body { top: 0px !important; }
+        .goog-te-gadget-icon,
+        iframe.goog-te-banner-frame,
+        #goog-gt-tt { display: none !important; visibility: hidden !important; }
+        body { top: 0px !important; position: static !important; }
+        .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
         #google_translate_element { display: none !important; }
         
         /* Premium Loading Screen Animations */
@@ -192,7 +195,7 @@
 
 <div class="hidden md:flex items-center gap-4 lg:gap-6">
 <div class="relative group">
-<button class="flex items-center gap-1.5 text-[#d5c1d2] hover:text-[#f9abff] transition-colors font-body py-2">
+<button class="flex items-center gap-1.5 text-[#d5c1d2] hover:text-[#f9abff] transition-colors font-body py-2 notranslate" translate="no">
 <span class="material-symbols-outlined text-[20px]">language</span>
 <span id="current-lang-text" class="text-sm font-semibold tracking-wide uppercase">DE</span>
 <span class="material-symbols-outlined text-[20px] transition-transform group-hover:rotate-180">expand_more</span>
@@ -224,13 +227,13 @@
 
 <div class="flex items-center gap-4 md:hidden relative z-[60]">
     <!-- Mobile Language Toggle -->
-    <button class="flex items-center gap-1 text-[#d5c1d2] hover:text-[#f9abff] transition-colors font-body py-2" onclick="toggleMobileLangMenu()">
+    <button class="flex items-center gap-1 text-[#d5c1d2] hover:text-[#f9abff] transition-colors font-body py-2 notranslate" translate="no" onclick="toggleMobileLangMenu()">
         <span class="material-symbols-outlined text-[20px]">language</span>
         <span id="mobile-lang-text" class="text-sm font-semibold tracking-wide uppercase">DE</span>
     </button>
 
     <!-- Mobile Menu Button -->
-    <button class="flex flex-col justify-center items-center w-10 h-10 text-[#f9abff] transition-all duration-300" id="mobile-menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
+    <button class="flex flex-col justify-center items-center w-10 h-10 text-[#f9abff] transition-all duration-300 notranslate" translate="no" id="mobile-menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
         <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
     </button>
 </div>
