@@ -709,11 +709,11 @@
     }
 
     async function extractAll() {
-        // Safety timeout to hide loader if metadata never loads (extended for 50% requirement)
+        // Safety timeout to hide loader if metadata never loads (extended for 75% requirement)
         const safetyTimeout = setTimeout(() => {
             console.log("Video metadata timeout - revealing page anyway.");
             revealSite();
-        }, 12000);
+        }, 15000);
 
         if (video.readyState < 1) {
             await new Promise(r => {
@@ -752,9 +752,10 @@
             frames[i] = await createImageBitmap(tmp);
 
             const pct = Math.round(((i + 1) / total) * 100);
+            if(DEBUG) console.log(`Extracting: ${pct}%`);
 
-            // Early Reveal: Show the page once 50% or 60 frames are ready
-            if ((pct >= 50 || i > 60) && loader && loader.style.opacity !== "0") {
+            // Early Reveal: Show the page once 75% or 90 frames are ready
+            if ((pct >= 75 || i > 90) && loader && loader.style.opacity !== "0") {
                 revealSite();
             }
         }
