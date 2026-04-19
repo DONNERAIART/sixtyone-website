@@ -114,6 +114,25 @@
         .animate-brand-text { animation: textPulse 3s ease-in-out infinite; }
         .animate-loader-circle { animation: circlePulse 2.5s ease-in-out infinite; }
         
+        /* Custom Scrollbar for Dropdowns */
+        .custom-scrollbar {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(249, 171, 255, 0.4) rgba(9, 21, 26, 0.8);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(9, 21, 26, 0.8); 
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(249, 171, 255, 0.4); 
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(249, 171, 255, 0.7); 
+        }
+        
         #hero-loader {
             transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -205,7 +224,7 @@
 <span class="material-symbols-outlined text-[20px] transition-transform group-hover:rotate-180">expand_more</span>
 </button>
 <div class="absolute right-0 mt-2 w-44 bg-surface-container-high border border-outline-variant/20 rounded-md shadow-[0_10px_30px_rgba(4,16,21,0.6)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden text-[#d7e4ec]">
-<div class="py-2 max-h-[400px] overflow-y-auto no-scrollbar notranslate" translate="no" style="scrollbar-width: none;">
+<div class="py-2 max-h-[400px] overflow-y-auto custom-scrollbar notranslate" translate="no">
 <a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('cs', 'CS'); return false;"><img alt="Čeština" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/cz.png"/> Čeština</a>
 <a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('de', 'DE'); return false;"><img alt="Deutsch" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/de.png"/> Deutsch</a>
 <a class="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-variant hover:text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('en', 'EN'); return false;"><img alt="English" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/gb.png"/> English</a>
@@ -244,7 +263,7 @@
 
 <!-- Mobile Language Dropdown (Compact) -->
 <div id="mobile-lang-dropdown" class="fixed top-20 right-4 w-40 bg-surface-container-high border border-outline-variant/20 rounded-md shadow-2xl opacity-0 invisible transition-all duration-300 z-[65] overflow-hidden">
-    <div class="py-2 max-h-[300px] overflow-y-auto no-scrollbar notranslate" translate="no" style="scrollbar-width: none;">
+    <div class="py-2 max-h-[300px] overflow-y-auto custom-scrollbar notranslate" translate="no">
         <a class="flex items-center gap-3 px-4 py-3 hover:bg-surface-variant text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('cs', 'CS'); toggleMobileLangMenu(); return false;"><img alt="Čeština" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/cz.png"/> Čeština</a>
         <a class="flex items-center gap-3 px-4 py-3 hover:bg-surface-variant text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('de', 'DE'); toggleMobileLangMenu(); return false;"><img alt="Deutsch" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/de.png"/> Deutsch</a>
         <a class="flex items-center gap-3 px-4 py-3 hover:bg-surface-variant text-[#f9abff] transition-colors text-sm font-body" href="#" onclick="setLanguage('en', 'EN'); toggleMobileLangMenu(); return false;"><img alt="English" class="w-[18px] h-auto rounded-sm shadow-sm" src="https://flagcdn.com/w20/gb.png"/> English</a>
